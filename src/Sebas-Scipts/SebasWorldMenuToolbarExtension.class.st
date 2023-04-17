@@ -36,6 +36,16 @@ SebasWorldMenuToolbarExtension class >> installPharoAiMeta [
 			load ]
 ]
 
+{ #category : #installing }
+SebasWorldMenuToolbarExtension class >> installPolyMath [
+
+	EpMonitor disableDuring: [
+		Metacello new
+			repository: 'github://PolyMathOrg/PolyMath';
+			baseline: 'PolyMath';
+			load ]
+]
+
 { #category : #'world menu' }
 SebasWorldMenuToolbarExtension class >> pharoAi: aBuilder [
 
@@ -75,7 +85,15 @@ SebasWorldMenuToolbarExtension class >> sebasOn: aBuilder [
 			(aBuilder item: #pharoAi)
 				label: 'pharo-ai';
 				parent: #SebasWorldMenuToolbarExtension;
-				order: 1;
+				order: 2;
 				icon: (self iconNamed: #smallObjects);
+				withSeparatorAfter.
+
+			(aBuilder item: #polyMath)
+				label: 'PolyMath';
+				action: [ self installPolyMath ];
+				parent: #SebasWorldMenuToolbarExtension;
+				order: 3;
+				icon: (self iconNamed: #smallLoadProject);
 				withSeparatorAfter ]
 ]

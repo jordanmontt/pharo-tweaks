@@ -14,6 +14,17 @@ SebasScripts class >> installIllimani [
 			load ]
 ]
 
+{ #category : #abstract }
+SebasScripts class >> installIllimani: aBuilder [
+
+	<worldMenu>
+	(aBuilder item: #InstallIllimani)
+		action: [ self installIllimani ];
+		label: 'Illimani';
+		parent: #SebasInstall;
+		order: 1
+]
+
 { #category : #'world menu' }
 SebasScripts class >> sebasOn: aBuilder [
 
@@ -23,5 +34,8 @@ SebasScripts class >> sebasOn: aBuilder [
 		order: 110;
 		icon: ((self iconNamed: #scriptManager) scaledToSize: 16 @ 16);
 		with: [
-			(aBuilder item: #'Install Illimani') action: [ self installIllimani ] ]
+			(aBuilder item: #SebasInstall)
+			label: 'Install';
+			order: 1;
+			icon: (self iconNamed: #smallLoadProject) ]
 ]

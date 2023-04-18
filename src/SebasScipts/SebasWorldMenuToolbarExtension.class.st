@@ -1,7 +1,7 @@
 Class {
 	#name : #SebasWorldMenuToolbarExtension,
 	#superclass : #Object,
-	#category : #'Sebas-Scipts'
+	#category : #SebasScipts
 }
 
 { #category : #installing }
